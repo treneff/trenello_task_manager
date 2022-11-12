@@ -1,8 +1,8 @@
 class Task:
-    def __init__(self, name, description, user, project, id=None):
-        self.name = name
+    def __init__(self, title, description, user, project, completed=False, id=None):
+        self.title = title
         self.description = description
         self.user = user
         self.project = project
-        self.completed = False
+        self.completed = completed
         self.id = id
