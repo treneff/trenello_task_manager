@@ -12,8 +12,21 @@ def save(task):
     results = run_sql(sql, values)
     id = results[0]['id']
     task.id = id
+
+#SELECT A TASK
+def select(id):
+    task = None
+    sql = "SELECT * FROM tasks WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
     
-    
+    if results:
+        result = results[0]
+        user = user_repository.select(result['user_id'])
+        project = project_repository.select(result['project_id'])
+        task = Task(result['title'], result['description'], user, project, result['completed'], result['id'] )
+    return task
+
 #SELECT ALL THE TASKS CURRENTLY IN THE DATABASE   
 def select_all():
     tasks = []
@@ -26,7 +39,20 @@ def select_all():
         task = Task(row['title'], row['description'], user, project, row['completed'], row['id'] )
         tasks.append(task)
     return tasks
-    
+
+#DELETE A TASK
+def delete(id):
+    sql = "DELETE FROM tasks WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+#DELETE ALL TASKS
 def delete_all():
     sql = "DELETE FROM tasks"
     run_sql(sql)
+
+#UPDATE A TASK
+def update(tasks):
+    sql = "UPDATE tasks SET (title, description, user_id, project_id, completed) = (%s, %s,%s, %s, %s) WHERE id = %s"
+    values = [tasks.title, tasks.description, tasks.user.id, tasks.project.id, tasks.completed, tasks.id]
+    run_sql(sql, values)
