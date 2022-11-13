@@ -1,12 +1,43 @@
 {% extends "base.html" %} {% block content %}
+<div class="main-container">
+  <section class="tasks-list">
+    <h2>Completed</h2>
+    {% for task in tasks %} {% if task.completed == True %}
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description}}</p>
+    <a href="/tasks/{{task.id}}">Edit</a>
+    <form action="/tasks/{{task.id}}/delete" method="POST">
+      <button class="trash-button">
+        <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
+      </button>
+    </form>
+    <form action="/tasks/{{task.id}}/delete" method="POST">
+      <button class="trash-button">
+        <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
+      </button>
+    </form>
+    {% endif %} {% endfor %}
+  </section>
 
-<h2>Tasks</h2>
+  <section class="tasks-list">
+    <h2>To Do</h2>
+    {% for task in tasks %} {% if task.completed ==False %}
+    <p>{{ task.title }}</p>
+    <p>{{ task.description}}</p>
+    <a href="/tasks/{{task.id}}">Edit</a>
+    <form action="/tasks/{{task.id}}/delete" method="POST">
+      <button class="trash-button">
+        <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
+      </button>
+    </form>
+    <form action="/tasks/{{task.id}}/delete" method="POST">
+      <button class="trash-button">
+        <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
+      </button>
+    </form>
+    {% endif %} {% endfor %}
+  </section>
+</div>
+<a href="/tasks/new"><span class="material-symbols-outlined"> add_box </span></a>
 
-{% for task in tasks %}
-
-<section>
-  <p>{{ task.title }}</p>
-</section>
-<a href="/tasks/{{task.id}}">see</a>
-
-{% endfor %} {% endblock %}
+{% endblock %}

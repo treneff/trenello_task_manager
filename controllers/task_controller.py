@@ -13,7 +13,7 @@ def tasks():
     tasks = task_repository.select_all()
     return render_template("tasks/index_tasks.html", tasks = tasks)
 
-#ROUTE NEW TASK --- NEEDS REFORMATTING
+#ROUTE NEW TASK --- NEEDS REFORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 @tasks_blueprint.route("/tasks/new")
 def new_task():
     users = user_repository.select_all()
@@ -47,3 +47,10 @@ def edit_task(id):
     projects = project_repository.select_all()
     
     return render_template('tasks/edit.html', task = task, projects = projects, users=users)
+
+#ROUTE DELETE A TASK
+@tasks_blueprint.route("/tasks/<id>/delete", methods=['POST'])
+def delete_task(id):
+    task_repository.delete(id)
+    return redirect('/tasks')
+
