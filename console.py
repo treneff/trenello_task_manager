@@ -19,11 +19,13 @@ user_1 = User('George')
 user_2 = User('Alex')
 project_1 = Project('Task Manager')
 task_1 = Task('Get Started','A short description of how to get started', user_1, project_1)
+task_2 = Task('Get Started','A short description of how to get started', user_2, project_1)
 
 user_repository.save(user_1)
 user_repository.save(user_2)
 project_repository.save(project_1)
 task_repository.save(task_1)
+task_repository.save(task_2)
 
 
 pdb.set_trace()

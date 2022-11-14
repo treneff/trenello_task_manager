@@ -67,3 +67,5 @@ def update(tasks):
     sql = "UPDATE tasks SET (title, description, user_id, project_id, completed) = (%s, %s,%s, %s, %s) WHERE id = %s"
     values = [tasks.title, tasks.description, tasks.user.id, tasks.project.id, tasks.completed, tasks.id]
     run_sql(sql, values)
+    
+

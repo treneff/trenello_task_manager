@@ -11,7 +11,8 @@ tasks_blueprint = Blueprint("tasks", __name__)
 @tasks_blueprint.route("/tasks")
 def tasks():
     tasks = task_repository.select_all()
-    return render_template("tasks/index_tasks.html", tasks = tasks)
+    projects = task_repository.select_all()
+    return render_template("tasks/index_tasks.html", tasks = tasks, projects = projects)
 
 #ROUTE NEW TASK --- NEEDS REFORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 @tasks_blueprint.route("/tasks/new")
@@ -34,7 +35,7 @@ def create_task():
     return redirect("/tasks")
 
 #ROUTE SHOW TASK
-@tasks_blueprint.route("/tasks/<id>", methods=['GET'])
+@tasks_blueprint.route("/tasks/<id>")
 def show_task(id):
     task = task_repository.select(id)
     return render_template('tasks/show.html', task = task)
@@ -63,4 +64,5 @@ def status_update(id):
 def delete_task(id):
     task_repository.delete(id)
     return redirect('/tasks')
+
 
