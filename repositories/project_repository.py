@@ -2,6 +2,8 @@ from db.run_sql import run_sql
 
 from models.project import Project
 import repositories.project_repository as project_repository
+import repositories.task_repository as task_repository
+from models.task import Task
 
 #save a project
 def save(project):

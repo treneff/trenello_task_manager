@@ -13,7 +13,7 @@
   </div>
 
   <div>
-    <label for="user_id">Author:</label>
+    <label for="user_id">User:</label>
     <select id="user_id" name="user_id">
       {% for user in users %}
         <option value="{{ user.id }}"
@@ -24,7 +24,7 @@
     </select>
   </div>
   <div>
-    <label for="project_id">Author:</label>
+    <label for="project_id">Project:</label>
     <select id="project_id" name="project_id">
       {% for project in projects %}
         <option value="{{ project.id }}"
@@ -34,6 +34,7 @@
       {% endfor %}
     </select>
   </div>
+ 
 
   <button type="submit">Update Task</button>
 

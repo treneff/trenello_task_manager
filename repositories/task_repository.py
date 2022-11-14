@@ -40,6 +40,18 @@ def select_all():
         tasks.append(task)
     return tasks
 
+# SELECT TASKS TO DISPLAY IN PROJECT
+def select_project_tasks(id):
+    tasks_to_display = []
+    sql = "SELECT * FROM tasks WHERE project_id = %s"
+    values = [id]
+    results = run_sql(sql,values)
+    for row in results:
+            user = user_repository.select(row['user_id'])
+            project = project_repository.select(row['project_id'])
+            task = Task(row['title'], row['description'], user, project, row['completed'], row['id'] )
+            tasks_to_display.append(task)        
+    return tasks_to_display
 #DELETE A TASK
 def delete(id):
     sql = "DELETE FROM tasks WHERE id = %s"
@@ -56,3 +68,5 @@ def update(tasks):
     sql = "UPDATE tasks SET (title, description, user_id, project_id, completed) = (%s, %s,%s, %s, %s) WHERE id = %s"
     values = [tasks.title, tasks.description, tasks.user.id, tasks.project.id, tasks.completed, tasks.id]
     run_sql(sql, values)
+    
+

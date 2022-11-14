@@ -1,20 +1,49 @@
 body {
   margin: 0;
   text-align: center;
+  height: 90vh;
 }
-
+header {
+  text-align: left;
+}
 a {
   text-decoration: none;
 }
-
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 200, 'opsz' 48;
-  transform: scale(2);
+.logo {
+  font-family: 'Dancing Script', sans-serif;
+  color: black;
+  font-size: 2rem;
 }
-
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.tasks-container {
+  width: 100%;
+}
+.task-wrapper {
+  border: 3px blue solid;
+  min-width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.add-item-btn {
+  position: sticky;
+  z-index: 99;
+  background-color: blue;
+  border: none;
+  border-radius: 35px;
+  width: 6rem;
+  height: 3rem;
+  bottom: 1vh;
 }
