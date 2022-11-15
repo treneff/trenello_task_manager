@@ -5,6 +5,7 @@ import repositories.user_repository as user_repository
 import repositories.project_repository as project_repository
 from models.task import Task
 from models.project import Project
+from models.task import Task
 
 projects_blueprint = Blueprint("projects", __name__)
 
