@@ -39,7 +39,18 @@ def select_all():
         task = Task(row['title'], row['description'], user, project, row['completed'], row['id'] )
         tasks.append(task)
     return tasks
-
+#Select projects tasks
+def select_project_tasks(id):
+    tasks_to_display = []
+    sql = "SELECT * FROM tasks WHERE project_id = %s"
+    values = [id]
+    results = run_sql(sql,values)
+    for row in results:
+            user = user_repository.select(row['user_id'])
+            project = project_repository.select(row['project_id'])
+            task = Task(row['title'], row['description'], user, project, row['completed'], row['id'] )
+            tasks_to_display.append(task)        
+    return tasks_to_display
 #DELETE A TASK
 def delete(id):
     sql = "DELETE FROM tasks WHERE id = %s"

@@ -59,6 +59,15 @@ def update_task(id):
     task_repository.update(task)
     return redirect('/tasks')
 
+#status update
+@tasks_blueprint.route("/tasks/<id>/status_update", methods=['POST'])
+def status_update(id):
+    task_to_edit = task_repository.select(id)
+    completed = request.form['completed']
+    task = Task(task_to_edit.title, task_to_edit.description, task_to_edit.user, task_to_edit.project, completed, id)
+    task_repository.update(task)
+    return redirect('/tasks')
+    
 #ROUTE DELETE A TASK
 @tasks_blueprint.route("/tasks/<id>/delete", methods=['POST'])
 def delete_task(id):
