@@ -7,18 +7,18 @@
       <h3>{{ task.title }}</h3>
       <p>{{ task.description}}</p>
       <div class="task-buttons">
-        <a href="/tasks/{{task.id}}/edit"
+        <a href="/projects/{{project.id}}/tasks/{{task.id}}/edit"
           ><button>
             <span class="material-symbols-outlined" style="font-size: 35px"> edit </span>
           </button>
         </a>
-        <form action="/tasks/{{task.id}}/status_update" method="POST">
+        <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
           <button type="submit" value="False" id="completed" name="completed">
             <span class="material-symbols-outlined" style="font-size: 35px"> done</span>
           </button>
         </form>
 
-        <form action="/tasks/{{task.id}}/delete" method="POST">
+        <form action="/projects/{{project.id}}/tasks/{{task.id}}/delete" method="POST">
           <button>
             <span class="material-symbols-outlined" style="font-size: 35px"> close </span>
           </button>
@@ -35,18 +35,18 @@
       <h3>{{ task.title }}</h3>
       <p>{{ task.description}}</p>
       <div class="task-buttons">
-        <a href="/tasks/{{task.id}}/edit"
+        <a href="/projects/{{project.id}}/tasks/{{task.id}}/edit"
           ><button>
             <span class="material-symbols-outlined" style="font-size: 35px"> edit </span>
           </button>
         </a>
-        <form action="/tasks/{{task.id}}/status_update" method="POST">
+        <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
           <button type="submit" value="True" id="completed" name="completed">
             <span class="material-symbols-outlined" style="font-size: 35px"> done</span>
           </button>
         </form>
 
-        <form action="/tasks/{{task.id}}/delete" method="POST">
+        <form action="/projects/{{project.id}}/tasks/{{task.id}}/delete" method="POST">
           <button>
             <span class="material-symbols-outlined" style="font-size: 35px"> close </span>
           </button>
@@ -56,7 +56,7 @@
     {% endif %} {% endfor %}
   </section>
 
-  <a href="/tasks/new" class="add-item-btn">
+  <a href="/projects/{{project.id}}/tasks/new" class="add-item-btn">
     <button class="add-item-btn"><span class="material-symbols-outlined"> add </span></button>
   </a>
 

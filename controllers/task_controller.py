@@ -48,16 +48,6 @@ def edit_task(id):
     
     return render_template('tasks/edit.html', task = task, projects = projects, users=users)
 
-#ROUTE UPDATE TASK
-@tasks_blueprint.route("/tasks/<id>", methods=['POST'])
-def update_task(id):
-    title = request.form['title']
-    description = request.form['description']
-    user = user_repository.select(request.form['user_id'])
-    project  = project_repository.select(request.form['project_id'])
-    task = Task(title, description, user, project, False, id )
-    task_repository.update(task)
-    return redirect('/tasks')
 
 #status update
 @tasks_blueprint.route("/tasks/<id>/status_update", methods=['POST'])

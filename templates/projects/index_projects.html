@@ -8,8 +8,16 @@
         <h3>{{ project.name }}</h3>
         </a>
     </div>   
+    <form action="/projects/{{project.id}}/delete" method="POST">
+        <button>
+          <span class="material-symbols-outlined" style="font-size: 35px"> close </span>
+        </button>
+      </form>
 {% endfor %}
 </section>
+<a href="/projects/new" class="add-item-btn">
+    <button class="add-item-btn"><span class="material-symbols-outlined"> add </span></button>
+  </a>
 
 {% endblock %}
 </div>
