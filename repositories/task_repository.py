@@ -48,10 +48,11 @@ def select_project_tasks(id):
     results = run_sql(sql,values)
     for row in results:
             user = user_repository.select(row['user_id'])
-            project = project_repository.select(row['project_id'])
+            project = project_repository.select(id)
             task = Task(row['title'], row['description'], user, project, row['completed'], row['id'] )
             tasks_to_display.append(task)        
     return tasks_to_display
+
 #DELETE A TASK
 def delete(id):
     sql = "DELETE FROM tasks WHERE id = %s"

@@ -12,7 +12,7 @@
             <span class="material-symbols-outlined" style="font-size: 35px"> edit </span>
           </button>
         </a>
-        <form action="/tasks/{{task.id}}/status_update" method="POST">
+        <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
           <button type="submit" value="False" id="completed" name="completed">
             <span class="material-symbols-outlined" style="font-size: 35px"> done</span>
           </button>
@@ -40,7 +40,7 @@
             <span class="material-symbols-outlined" style="font-size: 35px"> edit </span>
           </button>
         </a>
-        <form action="/tasks/{{task.id}}/status_update" method="POST">
+        <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
           <button type="submit" value="True" id="completed" name="completed">
             <span class="material-symbols-outlined" style="font-size: 35px"> done</span>
           </button>
