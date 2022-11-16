@@ -1,4 +1,4 @@
-                                                        # Trenello Task Manager
+ # Trenello Task Manager
 
 A full stack application developed on Flask with the main goal to track projects and enable a more efficient task management for the users involved. 
 
