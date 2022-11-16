@@ -5,7 +5,7 @@
     
 {% for project in projects %}
     <div class="projects-wrapper">
-        <a class="project_task-anchor" href="/projects/{{project.id}}/tasks">
+        <a class="project_task-anchor project-anchor" href="/projects/{{project.id}}/tasks">
             <h3>{{ project.name }}</h3>
         </a>
         <form action="/projects/{{project.id}}/delete" method="POST">

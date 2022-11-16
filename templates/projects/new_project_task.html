@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Add new task</h2>
+
+<form action="/tasks" method="POST">
+  <div>
+    <label for="user">User:</label>
+    <select name="user_id" id="user">
+      {% for user in users %}
+      <option value="{{ user.id }}">{{ user.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label for="project">Project</label>
+    <select name="project_id" id="project">
+      {% for project in projects %}
+      <option value="{{ project.id }}">{{ project.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div>
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" />
+  </div>
+  <div>
+    <label for="description">Title</label>
+    <input type="text" id="description" name="description" />
+  </div>
+  <input type="submit" />
+</form>
+
+{% endblock %}

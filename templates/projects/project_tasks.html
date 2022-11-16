@@ -16,17 +16,21 @@
                     <h3>{{ task.title }}</h3>
                 </a>
             </div>
-        <div class="task-buttons">
-            <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
+            <a class="project_task-anchor description-display" href="/projects/{{project.id}}/tasks/{{task.id}}/edit">
+                <h3>{{ task.description}}</h3>
+            </a>
+            <div class="task-buttons">
+                <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
                 <button type="submit" value="True" id="completed" name="completed">
                     <span class="material-symbols-outlined" style="font-size: 35px"> done</span>
                 </button>
-            </form>
-            <form action="/projects/{{project.id}}/tasks/{{task.id}}/delete" method="POST">
+                </form>
+                <form action="/projects/{{project.id}}/tasks/{{task.id}}/delete" method="POST">
                 <button>
                     <span class="material-symbols-outlined" style="font-size: 35px"> close </span>
                 </button>
-            </form>
+                </form>
+            </div>
         </div>
         {% endif %} {% endfor %}
     </section>
@@ -38,23 +42,28 @@
             <div class="project_task-anchor">
                 <a href="/projects/{{project.id}}/tasks/{{task.id}}/edit">
                     <h3>{{ task.title }}</h3>
-                </a>
+                </a> 
             </div>
-        <div class="task-buttons">
-            <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
-                <button type="submit" value="False" id="completed" name="completed">
-                    <span class="material-symbols-outlined" style="font-size: 35px"> done</span>
-                </button>
-            </form>
-            <form action="/projects/{{project.id}}/tasks/{{task.id}}/delete" method="POST">
-                <button>
-                    <span class="material-symbols-outlined" style="font-size: 35px"> close </span>
-                </button>
-            </form>
+            <a class="project_task-anchor description-display" href="/projects/{{project.id}}/tasks/{{task.id}}/edit">
+                    <h3>{{ task.description }}</h3>
+            </a>
+            <div class="task-buttons">
+                <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
+                    <button type="submit" value="False" id="completed" name="completed">
+                        <span class="material-symbols-outlined" style="font-size: 35px"> done</span>
+                    </button>
+                </form>
+                <form action="/projects/{{project.id}}/tasks/{{task.id}}/delete" method="POST">
+                    <button>
+                        <span class="material-symbols-outlined" style="font-size: 35px"> close </span>
+                    </button>
+                </form>
+            </div>
         </div>
         {% endif %} {% endfor %}
+    
     </section>
-
+</div>
 <a href="/projects/{{project.id}}/tasks/new" class="add-item-btn">
     <span class="material-symbols-outlined" style="font-size: 65px; "> add </span>
 </a>
