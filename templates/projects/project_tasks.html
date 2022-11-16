@@ -20,7 +20,7 @@
                 </a>
             </div>
             <a class="project_task-anchor description-display" href="/projects/{{project.id}}/tasks/{{task.id}}/edit">
-                <h3>{{ task.description}}</h3>
+                <p>{{ task.description}}</p>
             </a>
             <div class="task-buttons">
                 <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
@@ -50,7 +50,7 @@
                 </a> 
             </div>
             <a class="project_task-anchor description-display" href="/projects/{{project.id}}/tasks/{{task.id}}/edit">
-                    <h3>{{ task.description }}</h3>
+                    <p>{{ task.description }}</p>
             </a>
             <div class="task-buttons">
                 <form action="/projects/{{project.id}}/tasks/{{task.id}}/status_update" method="POST">
@@ -69,7 +69,7 @@
     </ul>
     </section>
     <a href="/projects/{{project.id}}/tasks/new" class="add-item-btn">
-        <span class="material-symbols-outlined" style="font-size: 65px; text-shadow: 2px 0px 1px black"> add </span>
+        <span class="material-symbols-outlined" style="font-size: 65px; text-shadow: 2px 0px 1px var(--secondary-color)"> add </span>
     </a>
 </div>
 

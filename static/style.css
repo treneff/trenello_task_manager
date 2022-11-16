@@ -16,7 +16,7 @@ body {
   margin: 0;
   text-align: center;
   background-color: var(--primary-color);
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px var(--secondary-color);
   animation: fade-in 1.5s;
 }
 
