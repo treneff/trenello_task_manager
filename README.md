@@ -28,18 +28,18 @@ In the development of the application the following brief was used.
 
 **MVP**
 
-*The app should allow the user to track projects and tasks associated with those projects as needing completing and as completed.
-*The user should be able to create new tasks and add them to projects.
-*The user should be able to create and delete projects.
-*The user should be able to amend the status of a task in the project from needing completing to completed.
+*The app should allow the user to track projects and tasks associated with those projects as needing completing and as completed.<br>
+*The user should be able to create new tasks and add them to projects.<br>
+*The user should be able to create and delete projects.<br>
+*The user should be able to amend the status of a task in the project from needing completing to completed.<br>
 
 
 **Extensions**
 
-*Incorporate additional field allowing tasks to be tracked while in progress.
-*Add an option to pin important tasks to the top of the list.
-*Allow completed tasks to be archived and able to be accessed for future reference.
-*Enable the tracking of a Date the task is due by.
+*Incorporate additional field allowing tasks to be tracked while in progress.<br>
+*Add an option to pin important tasks to the top of the list.<br>
+*Allow completed tasks to be archived and able to be accessed for future reference.<br>
+*Enable the tracking of a Date the task is due by.<br>
 
 Disclaimer: Some of the features are currently in development.
 <br>
