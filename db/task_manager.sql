@@ -7,7 +7,6 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE  projects(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
-
 );
 
 CREATE TABLE users (
