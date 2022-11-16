@@ -3,7 +3,7 @@
 <div class="main-container">
     <div class="return-button-wrap">
         <a class="project_task-anchor" href="/projects/{{project.id}}/tasks">
-            <span class="material-symbols-outlined" style="font-size: 35px"> close </span>
+            <span class="material-symbols-outlined" style="font-size: 35px; text-shadow: 2px 0px 1px black"> close </span>
         </a>
     </div>
     <form class="main-form" action="/projects/{{project.id}}/tasks" method="POST">
@@ -34,10 +34,10 @@
                 </select>
             </div>
             <button type="submit" class="project_task-anchor form-submit-btn">
-                <span class="material-symbols-outlined" style="font-size: 35px"> done </span>
+                <span class="material-symbols-outlined" style="font-size: 35px;text-shadow: 2px 0px 1px black"> done </span>
             </button>
         </div>
-  </form>
+    </form>
 </div>
 
 {% endblock %}
