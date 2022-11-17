@@ -8,7 +8,7 @@ app.register_blueprint(tasks_blueprint)
 # app.register_blueprint(users_blueprint)
 app.register_blueprint(projects_blueprint)
 
-@app.route('/home')
+@app.route('/projects')
 def home():
     return render_template('index.html')
 

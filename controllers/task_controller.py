@@ -14,7 +14,7 @@ def tasks():
     projects = task_repository.select_all()
     return render_template("tasks/index_tasks.html", tasks = tasks, projects = projects)
 
-#ROUTE NEW TASK --- NEEDS REFORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#ROUTE NEW TASK
 @tasks_blueprint.route("/tasks/new")
 def new_task():
     users = user_repository.select_all()
@@ -48,7 +48,6 @@ def edit_task(id):
     projects = project_repository.select_all()
     
     return render_template('tasks/edit.html', task = task, projects = projects, users=users)
-
 
 #status update
 @tasks_blueprint.route("/tasks/<id>/status_update", methods=['POST'])

@@ -28,11 +28,13 @@ def create_project():
     new_project = Project(name)
     project_repository.save(new_project)
     return redirect("/projects")
+
 #ROUTE DELETE A PROJECT
 @projects_blueprint.route("/projects/<id>/delete", methods=['POST'])
 def delete_project(id):
     project_repository.delete(id)
     return redirect('/projects')
+
 #ROUTE SHOW A TASK IN PROJECT
 @projects_blueprint.route("/projects/<project_id>/tasks/<id>", methods=['GET'])
 def show_task_in_project(project_id,id):
@@ -55,7 +57,7 @@ def new_project_task(id):
     project = project_repository.select(id)
     projects = project_repository.select_all()
     return render_template("tasks/new.html", users=users, project=project, projects=projects)
-    
+
 #ROUTE CREATE NEW TASK INSIDE PROJECT
 @projects_blueprint.route("/projects/<id>/tasks", methods=["POST"])
 def create_task_in_project(id):
@@ -101,7 +103,6 @@ def status_update_task_in_project(project_id,id):
     return redirect(f"/projects/{project_id}/tasks")
 
 #ROUTE TASK DELETE INSIDE A PROJECT
-
 @projects_blueprint.route("/projects/<project_id>/tasks/<id>/delete", methods=['POST'])
 def delete_task(project_id,id):
     task_repository.delete(id)
