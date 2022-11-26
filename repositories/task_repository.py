@@ -95,4 +95,8 @@ def update(tasks):
     values = [tasks.title, tasks.description, tasks.user.id, tasks.project.id, tasks.completed, tasks.id]
     run_sql(sql, values)
     
+    
+    
+
+    
 
