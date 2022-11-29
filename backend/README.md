@@ -50,10 +50,10 @@ Disclaimer: Some of the features are currently in development.
 python3, postgreSQL and Flask installations will be required to run the application
 
 To build the database structure and seed with starter data follow the steps in your terminal.
-
-1. createdb trenello_task_manager
-2. psql -d trenello_task_manager -f db/task_manager.sql
-3. python3 console .py
+1. access the project within the backend folder
+2. createdb trenello_task_manager
+3. psql -d trenello_task_manager -f db/task_manager.sql
+4. python3 console .py
 
 
 Then to initiate the application: 
