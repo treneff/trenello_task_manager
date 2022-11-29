@@ -7,8 +7,8 @@ from models.task import Task
 from models.project import Project
 from models.task import Task
 
-projects_blueprint = Blueprint("projects", __name__)
 
+projects_blueprint = Blueprint("projects", __name__)
 #ROUTE ALL TASKS
 @projects_blueprint.route("/projects")
 def all_projects():
@@ -76,13 +76,12 @@ def create_task_in_project(id):
 def update_task_in_project(project_id,id):
     title = request.form['title']
     description = request.form['description']
-    user = request.form['user_id']
-    project  = request.form['project_id']
+    user = user_repository.select(request.form['user_id'])
+    project  = project_repository.select(request.form['project_id'])
     task = Task(title, description, user, project, False, id )
     task_repository.update(task)
+    project = project_repository.select(project_id)
     return redirect(f"/projects/{project_id}/tasks", project = project)
-
-
 
 #ROUTE EDIT TASK INSIDE PROJECT
 @projects_blueprint.route("/projects/<project_id>/tasks/<id>/edit")
@@ -91,6 +90,7 @@ def edit_task_in_project(project_id,id):
     project = project_repository.select(project_id)
     users = user_repository.select_all()
     projects = project_repository.select_all()
+    task_repository.delete(id)
     return render_template('tasks/edit.html', task = task, projects = projects, users=users, project = project)
 
 #ROUTE STATUS UPDATE INSIDE PROJECT
