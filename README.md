@@ -61,6 +61,6 @@ Then to initiate the application:
 
 flask --app app --debug run
 
-The application will be initiated on port:4999 Therefore, can be accessed on http://127.0.0.1:4999/
+The application will be initiated on port:5000 Therefore, can be accessed on http://127.0.0.1:5000/
 
 A basic structure of projects and the tasks associated with them has been initiated for demonstration purposes, but is fully customizable
