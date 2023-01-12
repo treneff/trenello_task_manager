@@ -9,6 +9,8 @@ A full stack application developed on Flask with the main goal to track projects
 * [Installation](#installation)
 
 <br>
+<img width="1680" alt="Screenshot 2023-01-12 at 12 39 36" src="https://user-images.githubusercontent.com/65739239/212072601-5e59dbbf-a60a-4e16-8bfb-d0efd791c034.png">
+<img width="1680" alt="Screenshot 2023-01-12 at 12 39 47" src="https://user-images.githubusercontent.com/65739239/212072633-a5e268d2-d47d-4e4e-832d-af1695ded915.png">
 
 
 ## Technologies
@@ -50,10 +52,9 @@ Disclaimer: Some of the features are currently in development.
 python3, postgreSQL and Flask installations will be required to run the application
 
 To build the database structure and seed with starter data follow the steps in your terminal.
-1. access the project within the backend folder
-2. createdb trenello_task_manager
-3. psql -d trenello_task_manager -f db/task_manager.sql
-4. python3 console .py
+1. createdb trenello_task_manager
+2. psql -d trenello_task_manager -f db/task_manager.sql
+3. python3 console .py
 
 
 Then to initiate the application: 
